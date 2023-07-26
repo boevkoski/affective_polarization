@@ -1,3 +1,7 @@
+"""s2_mentions.py: Mention identification through Personal Named Entities"""
+
+__author__ = "Bojan Evkoski"
+
 import pandas as pd
 import os
 from io import open

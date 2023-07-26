@@ -1,6 +1,11 @@
+"""s0_metadata.py: Reading ParlaMint .conllu files and outputing .csvs with  speech metadata"""
+
+__author__ = "Bojan Evkoski"
+
 import pandas as pd
 import os
 from conllu import parse_incr
+
 
 def metadata_to_csv(directory):
     df = pd.DataFrame()
@@ -12,6 +17,7 @@ def metadata_to_csv(directory):
                 df = pd.concat([df, df_meta])
 
     return df
+
 
 def speech_to_csv(directory, df):
     ID_to_text = {}
@@ -40,11 +46,11 @@ def speech_to_csv(directory, df):
 
     return df
 
+
 parliaments = ['DK', 'FR', 'PL', 'RS', 'ES', 'UA']
 
 for parliament in parliaments:
-
-    parliament_folder =  '../data/parliaments/' + parliament + '/ParlaMint-' + parliament + '.conllu'
+    parliament_folder = '../data/parliaments/' + parliament + '/ParlaMint-' + parliament + '.conllu'
 
     df = metadata_to_csv(parliament_folder)
 

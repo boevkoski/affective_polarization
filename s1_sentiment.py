@@ -1,3 +1,7 @@
+"""s1_sentiment.py: Sentiment prediction on parliamentary speeches"""
+
+__author__ = "Bojan Evkoski"
+
 import pandas as pd
 from simpletransformers.classification import ClassificationModel, ClassificationArgs
 import pysbd
